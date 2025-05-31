@@ -1,0 +1,49 @@
+<div class="container mt-5">
+    <!-- Título principal -->
+    <h1 class="text-center">Busca ya un usuario para contratar tu servicio</h1>
+    
+
+    <!-- Botón para mostrar los usuarios más cercanos -->
+    <div class="text-center mt-4">
+        <button class="btn btn-primary" id="mostrarUsuariosBtn">Ubicación Usuario más cercano</button>
+    </div>
+
+    <!-- Campo para mostrar los usuarios más cercanos con checkboxes -->
+    <div id="usuariosCercanos" class="mt-4" style="display: none;">
+        <h4>Usuarios más cercanos:</h4>
+        <form id="usuariosForm">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="usuario" id="usuario1" value="Usuario 1">
+                <label class="form-check-label" for="usuario1">Usuario 1</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="usuario" id="usuario2" value="Usuario 2">
+                <label class="form-check-label" for="usuario2">Usuario 2</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="usuario" id="usuario3" value="Usuario 3">
+                <label class="form-check-label" for="usuario3">Usuario 3</label>
+            </div>
+        </form>
+    </div>
+
+    <!-- Botón para mostrar los detalles del viaje del usuario seleccionado -->
+    <div class="text-center mt-4">
+        <button class="btn btn-info" id="detallesViajeBtn" style="display: none;">Detalles del Viaje</button>
+    </div>
+
+    <!-- Descripción del viaje seleccionado -->
+    <div id="detallesViaje" class="mt-4" style="display: none;">
+        <h4>Descripción del Viaje:</h4>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Origen de Carrera:</strong> <span id="origenCarrera"></span></li>
+            <li class="list-group-item"><strong>Destino de Carrera:</strong> <span id="destinoCarrera"></span></li>
+            <li class="list-group-item"><strong>Valor de la Carrera:</strong> <span id="valorCarrera"></span></li>
+        </ul>
+    </div>
+
+    <!-- Botón para contratar el viaje -->
+    <div class="text-center mt-4">
+        <button class="btn btn-success" id="contratarViajeBtn" style="display: none;">Contratar Viaje</button>
+    </div>
+</div>

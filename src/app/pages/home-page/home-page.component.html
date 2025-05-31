@@ -1,0 +1,108 @@
+<!-- Sección del título principal -->
+<header class="text-center">
+    <div class="container">
+        <h1 class="display-3 fw-bold">Bienvenido a TAXIFAST</h1>
+        <p class="lead">Rápido, Seguro, y Confiable</p>
+    </div>
+</header>
+
+<!-- Sección de navegación -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">TAXIFAST</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#acerca">Acerca de Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#flotilla">Nuestra Flotilla</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#trabaja">Trabaja con Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#seguridad">Seguridad y Legales</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Sección "Acerca de Nosotros" -->
+<section id="acerca" class="text-center bg-light">
+    <div class="container">
+        <h2 class="display-4 text-dark">Solicita tu taxi de forma rápida y segura</h2>
+        <p class="lead text-dark">
+            Bienvenido a nuestro servicio de taxi. Puedes iniciar sesión o registrarte para comenzar a usar el servicio.
+        </p>
+        <div class="d-flex justify-content-center">
+            <a id="loginBtn" class="btn btn-primary me-3" [routerLink]="['/login']">Iniciar Sesión</a>
+            <a id="registerBtn" class="btn btn-secondary" [routerLink]="['/register/user']">Registro</a>
+        </div>
+    </div>
+</section>
+
+<!-- Sección "Nuestra Flotilla" -->
+<section id="flotilla" class="text-center">
+    <div class="container">
+        <h2 class="display-5">Nuestra Flotilla</h2>
+        <p class="lead">Descubre nuestra flotilla de vehículos modernos y seguros que están listos para llevarte a tu destino.</p>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <img src="img/1-SERVICIO-DE-TAXI.jpg" alt="Servicio de Taxi" class="img-fluid flotilla-img">
+                <p>Servicio de Taxi</p>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <img src="img/2-IMAGEN-MINI-VAN.jpg" alt="Minivan" class="img-fluid flotilla-img">
+                <p>Minivan</p>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <img src="img/3-suv-IMAGEN-CARRO-MODERNO.jpg" alt="SUV" class="img-fluid flotilla-img">
+                <p>SUV</p>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <img src="img/4-IMAGEN-LIMUSINA.jpg" alt="VIP Limo" class="img-fluid flotilla-img">
+                <p>VIP Limo</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección "Trabaja con Nosotros" -->
+<section id="trabaja" class="text-center">
+    <div class="container">
+        <h2 class="display-5">¿Quieres Trabajar con Nosotros?</h2>
+        <p class="lead">
+            Puedes trabajar con nosotros y escoger tu horario. Solo necesitas tener un vehículo moderno, licencia de conducción vigente, registrarte como conductor, e iniciar sesión. 
+        </p>
+    </div>
+</section>
+
+<!-- Sección "Seguridad y Legales" -->
+<section id="seguridad">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5 class="text-uppercase">Tu Seguridad</h5>
+                <p>Nuestros taxis están equipados con las últimas medidas de seguridad, desde GPS hasta sistemas de monitoreo en tiempo real.</p>
+            </div>
+            <div class="col-md-4">
+                <h5 class="text-uppercase">Términos Legales</h5>
+                <p>Todos nuestros servicios cumplen con las normativas locales y regulaciones legales para garantizar tu seguridad y protección.</p>
+            </div>
+            <div class="col-md-4">
+                <h5 class="text-uppercase">Derechos Reservados</h5>
+                <p>&copy; 2024 TAXIFAST. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pie de Página -->
+<footer class="text-center">
+    <p>&copy; 2024 TAXIFAST - El servicio de taxis que te lleva seguro a tu destino.</p>
+</footer>
