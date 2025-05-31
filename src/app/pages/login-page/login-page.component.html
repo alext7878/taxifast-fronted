@@ -1,0 +1,63 @@
+<div class="container mt-5">
+    <!-- Título Principal -->
+    <h1 class="text-center text-primary">Iniciar Sesión Usuario o Conductor</h1>
+
+    <!-- Imagen -->
+    <div class="text-center">
+        <img src="./img/1- imagen LOGIN REGISTRO.jpg" alt="Iniciar Sesión" class="img-fluid mt-3 mb-5"
+            style="max-width: 300px;">
+    </div>
+
+
+    <!-- Sección de Iniciar Sesión Usuario -->
+    <div class="card mb-5">
+        <div class="card-body">
+            <h2 class="text-center text-success">Iniciar Sesión Usuario</h2>
+
+            <!-- Campo Correo Electrónico Usuario -->
+            <div class="mb-3">
+                <label for="correoUsuario" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="correoUsuario" placeholder="Ingresa tu correo electrónico">
+            </div>
+
+            <!-- Campo Contraseña Usuario -->
+            <div class="mb-3">
+                <label for="contrasenaUsuario" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="contrasenaUsuario" placeholder="Ingresa tu contraseña">
+            </div>
+
+            <!-- Botón Ingresar Usuario -->
+            <div class="text-center">
+                <!-- <button class="btn btn-success" id="ingresarUsuarioBtn" disabled>Ingresar</button> -->
+                <button class="btn btn-success" id="ingresarUsuarioBtn" (click)="userLogin()">Ingresar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Iniciar Sesión Conductor -->
+    <div class="card">
+        <div class="card-body">
+            <h2 class="text-center text-primary">Iniciar Sesión Conductor</h2>
+
+            <!-- Campo Correo Electrónico Conductor -->
+            <div class="mb-3">
+                <label for="correoConductor" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="correoConductor"
+                    placeholder="Ingresa tu correo electrónico">
+            </div>
+
+            <!-- Campo Contraseña Conductor -->
+            <div class="mb-3">
+                <label for="contrasenaConductor" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="contrasenaConductor"
+                    placeholder="Ingresa tu contraseña">
+            </div>
+
+            <!-- Botón Ingresar Conductor -->
+            <div class="text-center">
+                <!-- <button class="btn btn-primary" id="ingresarConductorBtn" disabled>Ingresar</button> -->
+                <button class="btn btn-primary" id="ingresarConductorBtn" (click)="driverLogin()">Ingresar</button>
+            </div>
+        </div>
+    </div>
+</div>

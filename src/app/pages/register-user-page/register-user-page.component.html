@@ -1,0 +1,52 @@
+<div class="container mt-5">
+    <!-- Título principal -->
+    <h1 class="text-center text-primary">¡Regístrate ya, muy fácil y rápido!</h1>
+
+    <!-- Formulario de Registro de Usuario -->
+    <div class="card mt-4">
+        <div class="card-body">
+            <h2 class="card-title text-center">Registro Usuario</h2>
+
+            <!-- Campo Nombre Completo -->
+            <div class="mb-3">
+                <label for="nombreCompleto" class="form-label">Nombre Completo</label>
+                <input type="text" class="form-control" id="nombreCompleto" placeholder="Ingresa tu nombre completo" required>
+            </div>
+
+            <!-- Campo Número de Celular -->
+            <div class="mb-3">
+                <label for="numeroCelular" class="form-label">Número de Celular</label>
+                <input type="tel" class="form-control" id="numeroCelular" placeholder="Ingresa tu número de celular" required>
+            </div>
+
+            <!-- Campo Correo Electrónico -->
+            <div class="mb-3">
+                <label for="correoElectronico" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="correoElectronico" placeholder="Ingresa tu correo electrónico" required>
+            </div>
+
+            <!-- Campo Contraseña -->
+            <div class="mb-3">
+                <label for="contrasena" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="contrasena" placeholder="Ingresa tu contraseña" required>
+            </div>
+
+            <!-- Campo Confirmar Contraseña -->
+            <div class="mb-3">
+                <label for="confirmarContrasena" class="form-label">Confirmar Contraseña</label>
+                <input type="password" class="form-control" id="confirmarContrasena" placeholder="Confirma tu contraseña" required>
+            </div>
+
+            <!-- Botón de Registro Usuario (Deshabilitado al inicio) -->
+            <div class="text-center">
+                <!-- <button class="btn btn-primary mb-2" id="registrarUsuarioBtn" disabled>Registrarse Usuario</button> -->
+                <button class="btn btn-primary mb-2" id="registrarUsuarioBtn" (click)="register()">Registrarse Usuario</button>
+            </div>
+
+            <!-- Botón de Registro Conductor -->
+            <div class="text-center">
+                <a [routerLink]="['../driver']" class="btn btn-secondary" id="registrarConductorBtn">Registro Conductor</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+/* Fondo dinámico */
+body {
+    background: linear-gradient(120deg, #c3c5c7, #0453fc, #6e1cf1);
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header estilizado */
+header {
+    background: linear-gradient(120deg, #eaeff0, #8ba9e9); 
+    background-image: url('/img/LOGO-4-TAXIFAST.png');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    color: rgb(17, 20, 24);
+    border-color: #1a1a1a;
+}
+
+header h1 {
+    padding-top: 100px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Botones estilizados */
+.btn-primary {
+    background-color: #3777ca;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0046c7;
+}
+
+.btn-secondary {
+    background-color: #138034;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #FF5733;
+}
+
+/* Tarjetas de la flotilla */
+.flotilla-img {
+    border-radius: 15px;
+    transition: transform 0.3s;
+}
+
+.flotilla-img:hover {
+    transform: scale(1.1);
+}
+
+/* Secciones coloridas */
+section {
+    padding: 60px 0;
+}
+
+section#flotilla {
+    background: linear-gradient(120deg, #94a7a8, #1257ec);
+    color: #fcfcfc;
+}
+
+section#trabaja {
+    background: linear-gradient(120deg, #340e5f, #1c4be6);
+    color: #fff;
+}
+
+section#seguridad {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Pie de página estilizado */
+footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 20px 0;
+}

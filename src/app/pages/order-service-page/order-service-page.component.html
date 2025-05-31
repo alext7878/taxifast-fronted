@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <h1 class="text-center">Solicitar Servicio de Taxi</h1>
+    <form id="taxiForm" class="mt-4">
+        <div class="mb-3">
+            <label for="inicioCarrera" class="form-label">Inicio de Carrera</label>
+            <input type="text" class="form-control" id="inicioCarrera" placeholder="Ingrese el inicio de la carrera" required>
+        </div>
+        <div class="mb-3">
+            <label for="destinoCarrera" class="form-label">Destino de Carrera</label>
+            <input type="text" class="form-control" id="destinoCarrera" placeholder="Ingrese el destino de la carrera" required>
+        </div>
+        <div class="mb-3">
+            <label for="formaPago" class="form-label">Forma de Pago</label>
+            <select class="form-select" id="formaPago" required>
+                <option value="">Seleccione una opción</option>
+                <option value="efectivo">Pago en efectivo</option>
+                <option value="tarjeta">Pago con tarjeta de crédito</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
+    </form>
+</div>
