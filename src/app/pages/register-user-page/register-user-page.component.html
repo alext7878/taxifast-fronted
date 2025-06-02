@@ -4,37 +4,37 @@
 
     <!-- Formulario de Registro de Usuario -->
     <div class="card mt-4">
-        <div class="card-body">
+        <div class="card-body" [formGroup]="registerFormUser">
             <h2 class="card-title text-center">Registro Usuario</h2>
 
             <!-- Campo Nombre Completo -->
             <div class="mb-3">
                 <label for="nombreCompleto" class="form-label">Nombre Completo</label>
-                <input type="text" class="form-control" id="nombreCompleto" placeholder="Ingresa tu nombre completo" required>
+                <input type="text" formControlName="full_name" class="form-control" id="nombreCompleto" placeholder="Ingresa tu nombre completo" required>
             </div>
 
             <!-- Campo Número de Celular -->
             <div class="mb-3">
                 <label for="numeroCelular" class="form-label">Número de Celular</label>
-                <input type="tel" class="form-control" id="numeroCelular" placeholder="Ingresa tu número de celular" required>
+                <input type="tel" formControlName="phone_number" class="form-control" id="numeroCelular" placeholder="Ingresa tu número de celular" required>
             </div>
 
             <!-- Campo Correo Electrónico -->
             <div class="mb-3">
                 <label for="correoElectronico" class="form-label">Correo Electrónico</label>
-                <input type="email" class="form-control" id="correoElectronico" placeholder="Ingresa tu correo electrónico" required>
+                <input type="email" formControlName="email" class="form-control" id="correoElectronico" placeholder="Ingresa tu correo electrónico" required>
             </div>
 
             <!-- Campo Contraseña -->
             <div class="mb-3">
                 <label for="contrasena" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="contrasena" placeholder="Ingresa tu contraseña" required>
+                <input type="password" formControlName="password" class="form-control" id="contrasena" placeholder="Ingresa tu contraseña" required>
             </div>
 
             <!-- Campo Confirmar Contraseña -->
             <div class="mb-3">
                 <label for="confirmarContrasena" class="form-label">Confirmar Contraseña</label>
-                <input type="password" class="form-control" id="confirmarContrasena" placeholder="Confirma tu contraseña" required>
+                <input type="password" formControlName="confirm_password" class="form-control" id="confirmarContrasena" placeholder="Confirma tu contraseña" required>
             </div>
 
             <!-- Botón de Registro Usuario (Deshabilitado al inicio) -->

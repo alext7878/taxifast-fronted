@@ -4,55 +4,61 @@
 
 <!-- Formulario de Registro de Conductor -->
 <div class="card mt-4">
-    <div class="card-body">
+    <div class="card-body" [formGroup]="registerFormDriver">
         <h2 class="card-title text-center">Registro Conductor</h2>
 
         <!-- Campo Nombre Completo -->
         <div class="mb-3">
             <label for="nombreCompleto" class="form-label">Nombre Completo</label>
-            <input type="text" class="form-control" id="nombreCompleto" placeholder="Ingresa tu nombre completo" required>
+            <input type="text" formControlName="full_name" class="form-control" id="nombreCompleto" placeholder="Ingresa tu nombre completo" required>
         </div>
 
         <!-- Campo Número de Celular -->
         <div class="mb-3">
             <label for="numeroCelular" class="form-label">Número de Celular</label>
-            <input type="tel" class="form-control" id="numeroCelular" placeholder="Ingresa tu número de celular" required>
+            <input type="tel" formControlName="phone_number" class="form-control" id="numeroCelular" placeholder="Ingresa tu número de celular" required>
         </div>
 
         <!-- Campo Correo Electrónico -->
         <div class="mb-3">
             <label for="correoElectronico" class="form-label">Correo Electrónico</label>
-            <input type="email" class="form-control" id="correoElectronico" placeholder="Ingresa tu correo electrónico" required>
+            <input type="email"  formControlName="email" class="form-control" id="correoElectronico" placeholder="Ingresa tu correo electrónico" required>
         </div>
 
         <!-- Campo Contraseña -->
         <div class="mb-3">
             <label for="contrasena" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="contrasena" placeholder="Ingresa tu contraseña" required>
+            <input type="password" formControlName="password_hash" class="form-control" id="contrasena" placeholder="Ingresa tu contraseña" required>
         </div>
 
         <!-- Campo Confirmar Contraseña -->
         <div class="mb-3">
             <label for="confirmarContrasena" class="form-label">Confirmar Contraseña</label>
-            <input type="password" class="form-control" id="confirmarContrasena" placeholder="Confirma tu contraseña" required>
+            <input type="password" formControlName="confirm_password" class="form-control" id="confirmarContrasena" placeholder="Confirma tu contraseña" required>
         </div>
 
         <!-- Campo Placa del Vehículo -->
         <div class="mb-3">
             <label for="placaVehiculo" class="form-label">Placa del Vehículo</label>
-            <input type="text" class="form-control" id="placaVehiculo" placeholder="Ingresa la placa de tu vehículo" required>
+            <input type="text" formControlName="plate_number" class="form-control" id="placaVehiculo" placeholder="Ingresa la placa de tu vehículo" required>
         </div>
 
         <!-- Campo Número de Licencia -->
         <div class="mb-3">
             <label for="numeroLicencia" class="form-label">Número de Licencia</label>
-            <input type="text" class="form-control" id="numeroLicencia" placeholder="Ingresa tu número de licencia" required>
+            <input type="text" formControlName="license_number" class="form-control" id="numeroLicencia" placeholder="Ingresa tu número de licencia" required>
         </div>
 
         <!-- Campo Modelo del Vehículo -->
         <div class="mb-3">
             <label for="modeloVehiculo" class="form-label">Modelo del Vehículo</label>
-            <input type="text" class="form-control" id="modeloVehiculo" placeholder="Ingresa el modelo de tu vehículo" required>
+            <input type="text" formControlName="vehicle_model" class="form-control" id="modeloVehiculo" placeholder="Ingresa el modelo de tu vehículo" required>
+        </div>
+
+        <!-- Campo Color del Vehículo -->
+        <div class="mb-3">
+            <label for="colorVehiculo" class="form-label">Color del Vehículo</label>
+            <input type="text" formControlName="vehicle_color" class="form-control" id="colorVehiculo" placeholder="Ingresa el color de tu vehículo" required>
         </div>
 
         <!-- Botón de Registrar Conductor (Deshabilitado al inicio) -->
