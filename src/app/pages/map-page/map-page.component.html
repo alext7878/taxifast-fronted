@@ -1,0 +1,9 @@
+@if(!isUserLocationReady) {
+    <app-loading />
+}
+@else() {
+    <div>
+        <app-map />
+        <app-confirm-trip-button />
+    </div>
+}
