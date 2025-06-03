@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { TripService } from '../../services/trip.service';
 
 @Component({
   selector: 'app-order-service-page',
@@ -9,4 +11,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class OrderServicePageComponent {
 
+  tripService = inject(TripService);
+  router = inject(Router);
+
+  setDestination() {
+    this.router.navigate(['app', 'map']);
+  }
 }

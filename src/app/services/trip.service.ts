@@ -1,9 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
+import { Marker } from 'mapbox-gl';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TripService {
 
-  constructor() { }
+  destination = signal<Marker|null>(null);
 }

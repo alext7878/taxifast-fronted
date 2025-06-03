@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login-page',
@@ -12,6 +13,8 @@ import { Router } from '@angular/router';
 export class LoginPageComponent {
 
   router = inject(Router);
+  authService = inject(AuthService);
+
   private formBuilder = inject(FormBuilder);
 
   loginFormUser = this.formBuilder.group({
@@ -25,12 +28,30 @@ export class LoginPageComponent {
   })
 
   userLogin() {
-    console.log(this.loginFormUser.value);
-    this.router.navigate([ 'app', 'order-service' ]);
+    this.loginFormUser.markAllAsTouched();
+
+    if(this.loginFormUser.invalid) throw 'Formulario no valido';
+ 
+    const { email, password } = this.loginFormUser.value;
+
+    this.authService.login(email!, password!)
+      .subscribe({
+        next: (() => this.router.navigate([ 'app', 'order-service' ])),
+        error: (error => console.log(error))
+    });
   }
   
   driverLogin() {
-    console.log(this.loginFormDriver.value);
-    this.router.navigate([ 'app', 'search-trips' ]);
+    this.loginFormDriver.markAllAsTouched();
+
+    if(this.loginFormDriver.invalid) throw 'Formulario no valido';
+ 
+    const { email, password } = this.loginFormDriver.value;
+
+    this.authService.login(email!, password!)
+      .subscribe({
+        next: (() => this.router.navigate([ 'app', 'search-trips' ])),
+        error: (error => console.log(error))
+    });
   }
 }
