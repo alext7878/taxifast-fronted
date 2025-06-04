@@ -38,7 +38,7 @@ export class RegisterUserPageComponent {
     }
 
     delete user.confirm_password;
-    this.authService.registerDriver(user).subscribe({
+    this.authService.registerUser(user).subscribe({
       next: (() => this.router.navigate([ 'app', 'order-service' ])),
       error: (error => console.log(error))
     });

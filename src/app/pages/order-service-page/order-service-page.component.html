@@ -6,20 +6,16 @@
                     <button type="submit" class="btn btn-primary" (click)="setDestination()">Selecciona tu destino</button>
                 </div>
             }@else {
-                <form id="taxiForm" class="mt-4">
+                <form [formGroup]="tripForm" id="taxiForm" class="mt-4">
                     <div class="mb-3">
                         <label for="formaPago" class="form-label">Forma de Pago</label>
-                        <select class="form-select" id="formaPago" required>
+                        <select class="form-select" id="formaPago" formControlName="payment_method">
                             <option value="">Seleccione una opción</option>
-                            <option value="efectivo">Pago en efectivo</option>
-                            <option value="tarjeta">Pago con tarjeta de crédito</option>
+                            <option value="Efectivo">Pago en efectivo</option>
+                            <option value="Tarjeta">Pago con tarjeta de crédito</option>
                         </select>
                     </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
+                    <button type="submit" class="btn btn-primary" (click)="createTrip()">Enviar Solicitud</button>
                 </form>
             }
         </div>

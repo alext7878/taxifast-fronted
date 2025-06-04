@@ -26,7 +26,7 @@ export class AuthService {
   }
 
   registerUser(data: {[key: string]: any}) {
-    const url = `${environment.baseUrl}/register`;
+    const url = `${environment.baseUrl}/auth/register`;
     return this.http.post(url,  data)
       .pipe(
         tap((data) => this.setAuthStatus(data))
@@ -34,7 +34,7 @@ export class AuthService {
   }
 
   registerDriver(data: {[key: string]: any}) {
-    const url = `${environment.baseUrl}/register/driver`;
+    const url = `${environment.baseUrl}/auth/register/driver`;
     return this.http.post(url,  data)
       .pipe(
         tap((data) => this.setAuthStatus(data))
@@ -48,15 +48,15 @@ export class AuthService {
     if (this.user()) {
       return this.user();
     }else if(user) {
-      return JSON.parse(user);
+      this.user.set(JSON.parse(user));
+      return this.user();
     }
     return null;
   }
   
-
   private setAuthStatus(user: any) {
     this.user.set(user);
-    localStorage.setItem('tf_user', user);
+    localStorage.setItem('tf_user', JSON.stringify(user));
   }
 
   private deleteAuthStatus() {
