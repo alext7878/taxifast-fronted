@@ -10,7 +10,7 @@
 
 
     <!-- Sección de Iniciar Sesión Usuario -->
-    <div class="card mb-5">
+    <div class="card">
         <div class="card-body" [formGroup]="loginFormUser">
             <h2 class="text-center text-success">Iniciar Sesión Usuario</h2>
 
@@ -32,6 +32,10 @@
                 <button class="btn btn-success" id="ingresarUsuarioBtn" (click)="userLogin()">Ingresar</button>
             </div>
         </div>
+    </div>
+    <div class="d-flex justify-content-center gap-2">
+        <p>Si no tienes una cuenta, registrate aquí</p>
+        <a id="registerBtn" [routerLink]="['/register/user']">Ir a registro</a>
     </div>
 
     <!-- Sección de Iniciar Sesión Conductor -->
@@ -59,5 +63,9 @@
                 <button class="btn btn-primary" id="ingresarConductorBtn" (click)="driverLogin()">Ingresar</button>
             </div>
         </div>
+    </div>
+    <div class="d-flex justify-content-center gap-2">
+        <p>Si no tienes una cuenta, registrate aquí</p>
+        <a id="registerBtn" [routerLink]="['/register/driver']">Ir a registro</a>
     </div>
 </div>

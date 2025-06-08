@@ -48,6 +48,11 @@ export const routes: Routes = [
                 canActivate: [],
                 loadComponent: () => import('./pages/map-page/map-page.component').then(c => c.MapPageComponent)
             },
+            {
+                path: 'trip/:trip_id',
+                canActivate: [],
+                loadComponent: () => import('./pages/trip-page/trip-page.component').then(c => c.TripPageComponent)
+            },
         ]
     },
     {

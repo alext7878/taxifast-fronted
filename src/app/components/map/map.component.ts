@@ -35,12 +35,13 @@ export class MapComponent implements AfterViewInit {
         <br>
         <h6>Esta es tu ubicación actual</h6>`);
 
-    new Marker({ color: 'green' })
+    const currentUserMarker = new Marker({ color: 'green' })
         .setLngLat(this.placesService.userLocation() as [number, number])
         .setPopup(popup)
         .addTo(map);
 
     this.mapService.setMap(map);
+    this.mapService.currentUserMarker = currentUserMarker;
   }
 
   addMarker() {
@@ -65,7 +66,8 @@ export class MapComponent implements AfterViewInit {
 
   dragEndMarker() {
     this.mapService.getRouteBetweenPoints(
-      this.placesService.userLocation() as [number, number], 
+      this.placesService.userLocation() as [number, number],
+      // [-72.89361508068856, 4.884192056215401],
       this.tripService.destination()?.getLngLat().toArray() as [number, number])
   }
 }
