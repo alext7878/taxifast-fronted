@@ -3,6 +3,7 @@ import { inject, Injectable, signal } from '@angular/core';
 import { environment } from '../../environments/environment.development';
 import { Observable, tap } from 'rxjs';
 import { PlacesService } from './places.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,8 @@ import { PlacesService } from './places.service';
 export class AuthService {
 
   http = inject(HttpClient);
+  router = inject(Router);
+
   placesService = inject(PlacesService);
   user = signal<any>(null);
 
@@ -23,6 +26,7 @@ export class AuthService {
 
   logout() {
     this.deleteAuthStatus();
+    this.router.navigate(['login']);
   }
 
   registerUser(data: {[key: string]: any}) {
@@ -41,7 +45,6 @@ export class AuthService {
       );
   }
 
-  
   public get currentUser() : any {
     const user = localStorage.getItem('tf_user');
 

@@ -10,6 +10,7 @@ import { DirectionsApiClient } from '../api/directionsApiClient';
 export class MapService {
 
   map = signal<Map|undefined>(undefined);
+  currentUserMarker?: Marker;
   markers: Marker[] = [];
 
   directionsApi = inject(DirectionsApiClient);
@@ -74,7 +75,7 @@ export class MapService {
   }
 
   private drawLineString(route: Route) {
-    console.log({kms: route.distance / 1000, duration: route.duration / 60});
+    console.log({distance: route.distance / 1000, duration: route.duration / 60});
 
     if(!this.map()) throw Error('Mapa no inicializado');
 
@@ -127,11 +128,11 @@ export class MapService {
   }
 
   cleanMap() {
-    // if(this.map()?.getLayer('RouteString')) {
-    //   this.map()?.removeLayer('RouteString');
-    //   this.map()?.removeSource('RouteString');
-    // }
+    if(this.map()?.getLayer('RouteString')) {
+      this.map()?.removeLayer('RouteString');
+      this.map()?.removeSource('RouteString');
+    }
 
-    // this.markers.forEach(marker => marker.remove());
+    this.markers.forEach(marker => marker.remove());
   }
 }

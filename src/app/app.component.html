@@ -1,1 +1,6 @@
+@if(authService.user()) {
+    <div class="text-center d-flex justify-content-end mt-4 me-4">
+        <button class="btn btn-primary" (click)="logout()">Cerrar sesión</button>
+    </div>
+}
 <router-outlet />
