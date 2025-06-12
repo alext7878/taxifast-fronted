@@ -32,7 +32,7 @@ export class TripService {
   }
 
   endTrip(driver_id: number, trip_id: number) {
-    const url = `${environment.baseUrl}/trip/end/${trip_id}/driver/${driver_id}`;
+    const url = `${environment.baseUrl}/trip/${trip_id}/driver/${driver_id}`;
     return this.http.put(url, {});
   }
   
