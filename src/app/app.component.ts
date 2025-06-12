@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,11 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+
+  authService = inject(AuthService);
   title = 'fronted';
+
+  logout() {
+    this.authService.logout();
+  }
 }

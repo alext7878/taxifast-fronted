@@ -1,0 +1,61 @@
+<div class="container mt-5">
+    <!-- Título principal -->
+    <h1 class="text-center">Busca ya un usuario para contratar tu servicio</h1>
+
+    <!-- Campo para mostrar los usuarios más cercanos con checkboxes -->
+    <div id="usuariosCercanos" class="mt-4">
+        @if (trip()) {
+            <div class="card">
+                <div class="card-header">
+                    {{ trip().status }}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Viaje número: {{ trip().id }}</h5>
+                    <div class="d-flex gap-3">
+                        <div class="d-flex gap-1">
+                            <i class="bi bi-house-door-fill"></i>
+                            <p class="card-text"><strong>Destino: </strong>{{ trip().direction || 'Sin dirección' }}</p>
+                        </div>
+                        <p class="card-text"><strong>Usuario: </strong>{{ trip().full_name }}</p>
+                    </div>
+                    <div class="text-end">
+                        <a class="btn btn-primary" [routerLink]="['../trip', trip().id]">Ver ruta</a>
+                    </div>
+                </div>
+            </div>
+        }@else {
+            @if(trips().length > 0) {
+                <h4>Viajes disponibles:</h4>
+            }
+            @for(trip of trips(); track trip.id) {
+            <div class="form-check">
+                <div class="card">
+                    <div class="card-header">
+                        {{ trip.status }}
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Viaje número: {{ trip.id }}</h5>
+                        <div class="d-flex gap-3">
+                            <div class="d-flex gap-1">
+                                <i class="bi bi-house-door-fill"></i>
+                                <p class="card-text"><strong>Destino: </strong>{{ trip.direction || 'Sin dirección' }}</p>
+                            </div>
+                            <p class="card-text"><strong>Usuario: </strong>{{ trip.full_name }}</p>
+                        </div>
+                        <div class="text-end">
+                            <a class="btn btn-primary" (click)="acceptTrip(trip)">Aceptar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+            @empty {
+                <!-- Botón para mostrar los detalles del viaje del usuario seleccionado -->
+                <div class="text-center mt-4">
+                    <button class="btn btn-primary" id="detallesViajeBtn">Actualiza para buscar viajes</button>
+                </div>
+            }
+        }
+    
+    </div>
+</div>
