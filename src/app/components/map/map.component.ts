@@ -19,6 +19,7 @@ export class MapComponent implements AfterViewInit {
   tripService = inject(TripService);
 
   ngAfterViewInit() {
+    console.log('Start MapComponent ngAfterViewInit');
     if(!this.placesService.userLocation()) throw Error('No existe ubicación');
     
     const map = new Map({
@@ -42,6 +43,7 @@ export class MapComponent implements AfterViewInit {
 
     this.mapService.setMap(map);
     this.mapService.currentUserMarker = currentUserMarker;
+    console.log('End MapComponent ngAfterViewInit');
   }
 
   addMarker() {
