@@ -31,6 +31,7 @@ export class TripPageComponent {
   }
 
   private intervalId: any;
+  private trip_id?: number;
 
   ngOnInit() {
     console.log('Start TripPageComponent ngOnInit');
@@ -66,6 +67,7 @@ export class TripPageComponent {
       return;
     }
 
+    this.trip_id = Number(trip.id);
     const origin = this.splitCoordinates(trip.start_location);
     const destination = this.splitCoordinates(trip.destination);
 
@@ -92,9 +94,20 @@ export class TripPageComponent {
         <br>
         <h6>${text}</h6>`);
 
-    new Marker({ color: color, draggable: true })
+    new Marker({ color: color })
       .setLngLat(coordinates)
       .setPopup(popup)
       .addTo(this.mapService.map()!);
+  }
+
+  endTrip() {
+    this.tripService.endTrip(this.trip_id!, this.authService.user().id)
+      .subscribe({
+        next: (() => {
+          alert('Viaje finalizado correctamente');
+          this.router.navigate(['app', 'search-trips']);
+        }),
+        error: (error => console.log(error))
+      })
   }
 }
