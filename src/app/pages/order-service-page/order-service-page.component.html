@@ -13,7 +13,8 @@
                             <i class="bi bi-house-door-fill"></i>
                             <p class="card-text"><strong>Destino: </strong>{{ rxTrip.value().direction || 'Sin dirección' }}</p>
                         </div>
-                        <p class="card-text"><strong>Usuario: </strong>{{ rxTrip.value().full_name }}</p>
+                        <p class="card-text"><strong>Conductor: </strong>{{ rxTrip.value().driver }}</p>
+                        <p class="card-text"><strong>Usuario: </strong>{{ rxTrip.value().user }}</p>
                     </div>
                     <div class="text-end">
                         <a class="btn btn-primary" (click)="cancelTrip()">Cancelar</a>

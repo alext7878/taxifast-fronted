@@ -4,7 +4,7 @@
 @else() {
     <div>
         <app-map />
-        <app-end-trip-button/>
+        <app-end-trip-button (click)="endTrip()"/>
         <a style="position: fixed; top: 20px; left: 20px;" class="btn btn-primary" [routerLink]="['../search-trip']">Volver</a>
     </div>
 }
