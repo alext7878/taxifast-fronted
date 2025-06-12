@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, effect, inject } from '@angular/core';
 import { MapComponent } from '../../components/map/map.component';
 import { LoadingComponent } from '../../components/loading/loading.component';
 import { PlacesService } from '../../services/places.service';
@@ -17,7 +17,7 @@ import { EndTripButtonComponent } from '../../components/end-trip-button/end-tri
   styleUrl: './trip-page.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TripPageComponent implements AfterViewInit {
+export class TripPageComponent {
 
   router = inject(Router);
   mapService = inject(MapService);
@@ -32,7 +32,8 @@ export class TripPageComponent implements AfterViewInit {
 
   private intervalId: any;
 
-  ngAfterViewInit() {
+  ngOnInit() {
+    console.log('Start TripPageComponent ngOnInit');
     this.autivatedRouter.params
       .pipe(
         switchMap(({ trip_id }) => this.tripService.getTripByIdAndDriver(trip_id, this.authService.user().id))
@@ -40,7 +41,7 @@ export class TripPageComponent implements AfterViewInit {
         next: (res => this.setTripData(res)),
         error: (error => console.log(error))
       })
-
+    console.log('End TripPageComponent ngOnInit');
     // Ejecutar cada 30 segundos
     this.intervalId = setInterval(() => {
       this.updateDriverUbication();
@@ -60,7 +61,7 @@ export class TripPageComponent implements AfterViewInit {
   }
 
   setTripData(trip: any) {
-    if(!trip) {
+    if(!trip||!this.mapService.isMapReady) {
       this.router.navigate(['app', 'search-trips']);
       return;
     }
