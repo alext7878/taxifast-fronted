@@ -30,6 +30,11 @@ export class TripService {
     const url = `${environment.baseUrl}/trip/${trip_id}/user/${user_id}`;
     return this.http.put(url, {});
   }
+
+  endTrip(driver_id: number, trip_id: number) {
+    const url = `${environment.baseUrl}/trip/end/${trip_id}/driver/${driver_id}`;
+    return this.http.put(url, {});
+  }
   
   getTripByIdAndDriver(id: number, driver_id: number): Observable<any> {
     const url = `${environment.baseUrl}/trip/${id}/driver/${driver_id}`;
